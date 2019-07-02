@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDDIfSH1wH4mBS1iCoWdDkXdoNdEO6T3MI',
+    authDomain: 'challenge-verygin.firebaseapp.com',
+    databaseURL: 'https://challenge-verygin.firebaseio.com',
+    projectId: 'challenge-verygin',
+    storageBucket: 'challenge-verygin.appspot.com',
+    messagingSenderId: '279370363391',
+  },
 };
 
 /*
