@@ -12,6 +12,7 @@ export const environment = {
     storageBucket: 'challenge-verygin.appspot.com',
     messagingSenderId: '279370363391',
   },
+  API_URL: 'http://www.omdbapi.com',
 };
 
 /*

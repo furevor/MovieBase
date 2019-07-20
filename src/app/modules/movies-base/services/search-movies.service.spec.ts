@@ -13,6 +13,6 @@ describe('SearchMoviesService', () => {
     [SearchMoviesService],
     (service: SearchMoviesService) => {
       expect(service).toBeTruthy();
-    }
+    },
   ));
 });

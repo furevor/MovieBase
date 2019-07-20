@@ -1,0 +1,17 @@
+<div class="movie-info mx-lg-auto my-2">
+  <ng-container *ngIf="(activeMovie$ | async) as movie">
+    <div class="d-flex justify-content-center mb-2">
+      <img class="mt-2" [src]="posterURL" alt="">
+    </div>
+    <div class="d-flex flex-column">
+      <ng-container *ngFor="let item of movie | keyvalue">
+        <div class="mb-2 mx-2">
+          <span><b>{{item.key}}:</b> {{item.value}}</span>
+        </div>
+      </ng-container>
+    </div>
+    <div class="d-flex">
+      <button type="button" class="btn btn-outline-primary ml-2 mb-2" (click)="turnBack()">Back</button>
+    </div>
+  </ng-container>
+</div>

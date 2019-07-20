@@ -1,0 +1,87 @@
+$color-accent: #4ce1b6;
+$color-additional: #999999;
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left:  0;
+  z-index:  1002;
+  background:  rgba(23, 21, 21, 0.5);
+  width:  100%;
+  height: 100%;
+}
+
+.modal-window {
+  position: relative;
+  top: 20%;
+  width: 50%;
+}
+
+.login-window {
+  background: white;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
+  z-index: 1003;
+  padding: 0;
+}
+
+@media only screen and (max-width: 420px) {
+  .modal-window {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 421px)  {
+  .modal-window {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .modal-window {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1600px)  {
+  .modal-window {
+    width: 30%;
+  }
+}
+
+.form {
+  padding: 20px;
+
+  .form-group-field {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    position: relative;
+
+    .mat-icon {
+      height: 20px;
+      width: 20px;
+      font-size: 20px;
+    }
+  }
+
+  .form-group-button {
+    padding: 6px;
+    height: 32px;
+    cursor: pointer;
+    transition: all .3s;
+    position: relative;
+    margin-bottom: 0;
+    background-color: #f2f4f7;
+    border: 1px solid #f2f4f7;
+  }
+
+  .form-group-field-error {
+    font-size: 10px;
+    line-height: 13px;
+    color: #ad4444;
+    display: block;
+    position: absolute;
+    bottom: -15px;
+  }
+}

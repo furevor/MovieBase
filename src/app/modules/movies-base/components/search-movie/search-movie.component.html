@@ -1,0 +1,39 @@
+<header class="header">
+  <p class="header-title">Search your favorite movies!</p>
+</header>
+
+<main class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-4 col-sm-12 text-center">
+      <div class="search-field">
+        <form [formGroup]="searchMoviesForm">
+          <div class="form-group">
+            <input class="form-control form-control-lg" formControlName="searchInput" placeholder="movie title..">
+          </div>
+        </form>
+      </div>
+
+      <ul class="movies-list" *ngIf="(movies$ | async) as movies">
+        <li *ngFor="let movie of movies | angularPaginator: {itemsPerPage: this.itemsPerPage, currentPage: currentPage }; let i = index">
+          <div class="movie-element" (click)="showMovieInfo(movie)"
+               [ngClass]="{
+               'alert-success': movie.imdbRating >= 8,
+               'alert-danger': movie.imdbRating <= 5,
+               'alert-warning': movie.imdbRating > 5 && movie.imdbRating < 8}">
+
+            <span>{{(currentPage - 1) * itemsPerPage + i + 1}}. {{movie.Title}}, year: {{movie.Year}}, type: {{movie.Type}}, rating: {{movie.imdbRating}}</span>
+          </div>
+        </li>
+        <div class="movies-paginator">
+          <app-angular-paginator (pageChange)="currentPage = $event"></app-angular-paginator>
+        </div>
+      </ul>
+
+
+      <div class="d-flex justify-content-end my-2">
+        <button class="btn btn-outline-primary" (click)="getMockMovies()">Mock Movies!</button>
+        <button class="btn btn-outline-dark ml-auto" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </div>
+</main>
